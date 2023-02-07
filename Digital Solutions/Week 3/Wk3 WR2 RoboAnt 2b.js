@@ -1,5 +1,5 @@
 //Increase speed
-Change_Delay_To(150)
+Change_Delay_To(150);
 
 
 //Functions
@@ -10,11 +10,10 @@ function Double_L() {
     Turn_Left();  
 }
 
-//Picks up ALL markers on a point
-function Pick_UpA() {
-    while (On_A_Marker())   {
-        Pick_Up_Marker();
-    }
+//Move forward then pick up a marker
+function pickUpMove() {
+    Move();
+    Pick_Up_Marker();
 }
 
 // Drop all markers
@@ -24,11 +23,11 @@ function Drop_Markers() {
     }
 }
 
-//Goes up stairs
+//Go up stairs
 function Up_Stairs() {
     Turn_Left();    
     Move();
-    Turn_Left();    // Turn Right
+    Turn_Left();
     Double_L();
     Move();
 }
@@ -46,12 +45,15 @@ function Down_Stairs()  {
 //      Sequence
 
 //Move to bottom of the stairs & pick up markers
-for (var x=1; x<=6; x++) {
-Pick_UpA();
-Move();
+for (var x=1; x<=4; x++) {
+pickUpMove();
 }
 
-//Move to bottom of the stairs & pick up markers
+//Move to bottom of stairs
+Move();
+Move();
+
+//Go up the stairs
 for (var x=1; x<=3; x++) {
 Up_Stairs();
 }
@@ -72,7 +74,7 @@ for (var x=1; x<=6; x++) {
 Move();
 }
 
-// face original direction
+// Face original direction
 Double_L();
 
 
