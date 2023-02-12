@@ -1,0 +1,46 @@
+Increase movement speed to 150 milliseconds
+
+FUNCTION TurnLeftTwice
+	Turn Left
+	Turn Left
+
+FUNCTION PickUpMarker
+	WHILE On a marker
+		Pick up the marker
+
+FUNCTION DropMarkers
+	WHILE There are markers in Ants Bag
+		Drop the Markers
+
+FUNCTION UpStairs
+	Turn Left
+	Move forward
+	Turn Left
+	CALL TurnLeftTwice
+	Move forward
+
+FUNCTION DownStairs
+	Move forward
+	Turn left
+	Move forward
+	Turn left
+	CALL TurnLeftTwice
+
+//Begin Sequence
+
+FOR 6 times CALL PickUpMarker & Move forward
+
+FOR 3 times CALL UpStairs
+
+CALL DropMarkers
+
+CALL TurnLeftTwice
+
+FOR 3 times CALL DownStairs
+
+FOR 6 times Move forward
+
+CALL TurnLeftTwice
+
+
+// END
