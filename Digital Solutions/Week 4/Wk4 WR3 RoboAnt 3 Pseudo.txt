@@ -1,20 +1,3 @@
-Wk4 WR3
-
-Q1: Define the RoboAnt activity 3 problem. Write your own understanding of the problem based on the text you have been presented with.
-
-Q1 Support: RoboAnt has to move along the shortest path from the starting position, (the home position), to the western end of the table marked X.
-The barrier is placed in front of RoboAnt to prevent him straying into the acid bath, marked A.
-From position X, RoboAnt must then navigate to the southern end of the table and pick up the marker which is located there.
-He must then carry the marker and place it in the acid bath at point A. When the job is finished, RoboAnt must return to the starting position.
-
-
-Q1 Answer: 
-
-
-
-
- 
-Q4:
 Increase Movement speed to 100 Milliseconds
 
 FUNCTION turnRight
@@ -94,8 +77,5 @@ FOR 5 times
 	Move Forward
 ENDFOR
 
-END
- 
-Q6: -- paste code
-Q7: Do in word
 
+END
