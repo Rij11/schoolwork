@@ -1,0 +1,54 @@
+Increase Movement Speed to 100 Milliseconds
+
+
+Create Variable markers
+Create Variable stop
+Create Variable moves
+Create Variable turns
+
+
+WHILE stop is equal to 0
+	IF On a Marker & Variable stop is equal to 0
+		Pick Up Marker
+		Increase Variable markers by 1
+	ENDIF
+
+	ELSE IF Front is Clear
+		Move forward
+			Increase Variable moves by 1
+	ENDELSEIF
+
+	ELSE IF Front is Blocked & Right is Clear & Left is Clear
+		Increase Variable stop by 1
+		WHILE Any Markers in Bag
+			Put Down Markers
+		ENDWHILE
+		SAY Variable markers divided by Variable turns times by 100		
+		SAY Variable turns divided by Variable moves times by 100
+	ENDELSEIF
+	
+	ELSE IF Front is Blocked & Right is Blocked & Left is Blocked
+		Turn Left
+		Turn Left
+		Move forward
+		Increase Variable moves by 1
+		Increase Variable turns by 2
+	ENDELSEIF
+
+	ELSE IF Front is Blocked & Left is Blocked
+		FOR 3 times
+			Turn Left
+		ENDFOR
+		Move forward
+		Increase Variable moves by 1
+		Increase Variable turns by 1
+	ENDELSEIF
+
+	ELSE IF Front is Blocked & Right is Blocked
+		Turn Left
+		Move forward
+		Increase Variable moves by 1
+		Increase Variable turns by 1
+	ENDELSEIF
+ENDWHILE
+
