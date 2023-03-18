@@ -1,0 +1,26 @@
+Increase Movement Speed to 100 Milliseconds
+
+SET stop to 0
+
+WHILE stop is equal to 0
+	Turn Left
+	Move Forward
+
+	IF On a Marker
+		Pick up Marker
+	ENDIF
+
+	ELSEIF Front is blocked & Left is clear & Right is clear
+		Increase variable stop by 1
+		WHILE Any Markers in Marker bag
+			Drop Marker
+		ENDWHILE
+
+	ELSE
+		Turn Left
+		Turn Left
+		Move Forward
+	ENDELSE
+
+ENDWHILE
+
