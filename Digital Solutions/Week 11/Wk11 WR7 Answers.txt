@@ -1,0 +1,65 @@
+Q1.
+PHP is a server side based coding langauge that works with html to change items on the client side. It also allows for more complex functions such as data storage.
+
+Q2.
+// This is a single line comment
+# This is a single line comment
+
+/*
+This is a multiline comment
+*/
+
+Commenting your code is espically important in PHP where the coding language is complex and you can't see any progress until you have the completed all of the minium code requirements for the project.
+
+
+Q3.
+1. Variables start with a $ then there variable name ($test - The $ declares the variable and 'test' is the variable name)
+2. The variable name must begin with a letter or underscore (_)
+3. The variable name can't begin with a number (1,2,3, etc)
+4. The variable name can only contain alphanumeric characters and underscores (A-z, 0-9, _)
+5. Variable names are case sensitive, ($test & $TEST are different variables)
+
+
+Q4.
+1. String - A string consists of a sequnce of characters. (It can be placed inside of '' or "") (EG: $eg1 = "Hello world!";)
+2. Integer - A integer consists of a sequence of non decimal numbers. (Can be negative or positive) (EG: $eg2 = 300104;)
+3. Float - A float consists of a number with a decimal point or a number in exponential form. (EG: $eg3 = 12.345;)
+4. Boolean - A boolean value represents a 'True' or 'False' value. (EG: $eg4 = true;)
+
+
+Q5.
+Assignment operators are used to write numerical values to a variable. (EG: x = y, x += y)
+Comparison operators are used to compare two values (Numbers or Strings). (EG: x > y, x ==y)
+
+
+Q6.
+        $age3 = 18;
+        echo "Age is equal to 18. <br>";
+
+        if ($age3 < 15) {
+            echo "You should not watch PG movies without adult supervision. <br><br>";
+        } elseif ($age3 > 14 && $age3 < 18) {
+            echo "You are old enough to watch PG movies by yourself. <br><br>";
+        } else {
+            echo "You are old enough to watch PG or R movies <br><br>";
+        }
+
+
+Q7.
+        echo "Count up by 2s!<br>";
+        $numbers = array(2, 4, 6, 8, 10, 12, 14, 16, 18, 20);
+        foreach($numbers as $pos) {
+            echo "$pos<br>";
+        }
+
+This code contains an array of numbers counting up in 2s from 2 to 20.
+The foreach loop runs the code for the amount of times there are items in the array.
+This makes it easier if you are regurlary changing the array as you don't have to update the loop to run the correct amount of times.
+This foreach loop echoes out each value in the array: 2, 4, 6, 8, etc until it reaches 20 and stops.
+
+
+Q8.
+In PHP super globals are predefined variables that are always accessible.
+$_SERVER can be used to return data about the file, such as the file path, file name, server IP, server agent, etc
+$_POST can be used to return data after submitting an HTML form using the post method.
+$_GET can be used to return data after submitting an HTML form using the get method.

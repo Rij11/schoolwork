@@ -1,0 +1,124 @@
+Q1.
+<!DOCTYPE html> is used set the language of the document to HTML.
+<html> </html> is used to set the area where all of the html script will be written.
+<head> </head> is a container used to store metadata and is placed within the html tag.
+<title> </title> is placed within the head tag and is the text that appears on the browser tab.
+<body> </body> is used to define the documents body. It contains headings, paragraphs, images, hyperlinks, etc.
+
+
+Q2.
+<a href="https://ipto.com.au/">DSO</a>
+
+Q3.
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+
+<p>Paragraph tag</p>
+
+<b>Bolded text in here, use it inside a Paragraph or Heading tag</b>
+
+<i>Italicised text in here, use it inside a Paragraph or Heading tag</i>
+
+<p style="color:red">Red text</p>
+
+Q4.
+<img src="https://i.insider.com/602ee9ced3ad27001837f2ac?width=750&format=jpeg&auto=webp" alt="Image">
+
+Q5.
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+
+
+<h2>This is a table</h2>
+
+<table>
+  <tr>
+    <th>Column 1</th>
+    <th>Column 2</th>
+    <th>Column 3</th>
+    <th>Column 4</th>
+    <th>Column 5</th>
+  </tr>
+  <tr>
+    <td>Row 1, Column 1</td>
+    <td>Row 1, Column 2</td>
+    <td>Row 1, Column 3</td>
+    <td>Row 1, Column 4</td>
+    <td>Row 1, Column 5</td>
+  </tr>
+  <tr>
+    <td>Row 2, Column 1</td>
+    <td>Row 2, Column 2</td>
+    <td>Row 2, Column 3</td>
+    <td>Row 2, Column 4</td>
+    <td>Row 2, Column 5</td>
+  </tr>
+  <tr>
+    <td>Row 3, Column 1</td>
+    <td>Row 3, Column 2</td>
+    <td>Row 3, Column 3</td>
+    <td>Row 3, Column 4</td>
+    <td>Row 3, Column 5</td>
+  </tr>
+  <tr>
+    <td>Row 4, Column 1</td>
+    <td>Row 4, Column 2</td>
+    <td>Row 4, Column 3</td>
+    <td>Row 4, Column 4</td>
+    <td>Row 4, Column 5</td>
+  </tr>
+  <tr>
+    <td>Row 5, Column 1</td>
+    <td>Row 5, Column 2</td>
+    <td>Row 5, Column 3</td>
+    <td>Row 5, Column 4</td>
+    <td>Row 5, Column 5</td>
+  </tr>
+  <tr>
+    <td>Row 6, Column 1</td>
+    <td>Row 6, Column 2</td>
+    <td>Row 6, Column 3</td>
+    <td>Row 6, Column 4</td>
+    <td>Row 6, Column 5</td>
+  </tr>
+</table>
+
+
+Q6.
+<ul style="list-style-type:disc;">
+  <li>Object 1</li>
+  <li>Object 2</li>
+  <li>Object 3</li>
+</ul> 
+
+<ol type="A">
+  <li>Object 1</li>
+  <li>Object 2</li>
+  <li>Object 3</li>
+</ol> 
+
+
+Q7.
+If html is the building blocks of a webpage. CSS is all of the paint and decorations that go on top.
+It is an easier way to set the style of the entire webpage, instead of specificing it in each element.
+
+Q8.
+<!-- This is a comment -->
+<p>Text</p>

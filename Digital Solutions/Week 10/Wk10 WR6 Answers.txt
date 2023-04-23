@@ -1,0 +1,58 @@
+Q1.
+A Selector is the variable before the {} in CSS. It selects the element, tag, area that needs to be formatted. (EG: p, .center, p.center)
+Declaration is a string that includes both a property and a property value. (EG: color: red;)
+A Property is a set inside of the {}'s. The data before the : is the property while the data before the ; is the property value. (EG: color: red; (color is property, red is the property value))
+A Value is the varaible that changes the design of the property. (Described above)
+
+
+Q2.
+/*Change paragraph text to blue*/
+
+p {
+  color: blue;
+}
+
+
+Q3.
+body {
+  background-image: url("ocean.jpg");
+}
+
+
+Q4.
+A margin is the space around an elements border, while padding is the space between an elements border and its content.
+
+
+Q5.
+div {
+  background-color: red;    
+  text-align: center;
+  width: %100;
+  height: 200px;
+}
+
+
+Q6.
+Place inside of a CSS File or Style Tag
+#customers tr:hover {background-color: #0000FF;}
+
+
+Q7.
+Websafe fonts are fonts that come pre-installed or natively supported by the majority of devices. This ensures that the intended design is conveyed.
+
+Arial (sans-serif)
+Verdana (sans-serif)
+Tahoma (sans-serif)
+Trebuchet MS (sans-serif)
+Times New Roman (serif)
+Georgia (serif)
+Garamond (serif)
+Courier New (monospace)
+Brush Script MT (cursive)
+
+
+Q8.
+-Link; normal unvisited link
+-Visited; link user has clicked on
+-Hover; link when user places cursor over it
+-Active; link the moment it is clicked
