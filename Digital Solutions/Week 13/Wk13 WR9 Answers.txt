@@ -1,0 +1,99 @@
+<?php
+    session_start();    //Starts Session
+    $submitbtn = 'Take a guess';    // Sets and resets a new game
+    
+    function newgame() {
+        
+        global $guess, $message, $submitbtn;    //Make global variables so they can be available in the whole program, not just the function
+        //Initialise the variables (set them up and give them a starting value)
+        $guess = '';    //Is the number user guesses
+        $_SESSION['target'] = (rand()%100)+1;   //Randomly generates a number between 1 and 100
+        $_SESSION['guesses'] = 0;   //Amount of guesses by user
+        $message = 'Guess!';    //The message
+        $submitbtn = 'Take a guess';  //Button message
+   }
+   
+//Runs the game  
+
+    if (isset($_POST['submitbtn'])) { // Checks if the submit button has been pressed
+        if ($_SESSION['target'] != 'new') { // Checks if the value of $target is not equal to 'new'
+            $guess = $_POST['guess'];
+            $_SESSION['guesses']++; //Increases guesses variable
+            if ($guess > $_SESSION['target']) { //Checks if guess was bigger then the number
+                $message = 'Your guess of '.$guess.' was too big. Good try!<br> Have another guess';
+            } else if ($guess < $_SESSION['target']) {  //Checks if the number was smaller than the number
+                $message = 'Your guess of '.$guess.' was too small. Good try!<br> Have another guess';
+            } else {
+                $message = 'Correct! You took '.$_SESSION['guesses'].' guesses.';
+                $_SESSION['target'] = 'new';
+                $submitbtn = 'Play again';
+            }
+        } else {
+            newgame();
+        }
+    } else {
+        newgame();
+    }
+?>
+
+<html>
+    <head>
+        <title>Guess the number!</title>
+        <style>
+            body {
+                margin: 0px;
+            }
+            #main {
+               background-color: white;
+               border-width: 35px;
+               border-style: solid;
+               border-color: #00B0F0;
+            }
+            #message {
+               background-color: white;
+               color: red;
+               font-family: 'Comic Sans MS';
+               font-size: 48;
+               font-weight: bold;
+               text-align: center;
+            }
+            #guess {
+               color: black;
+               font-family: 'Comic Sans MS';
+               font-size: 200;
+               font-weight: bold;
+               width: 380px;
+               text-align: center;
+               vertical-align: top;
+            }
+            #submitbtn {
+               color: red;
+               font-family: 'Comic Sans MS';
+               font-size: 48;
+               font-weight: bold;
+               width: 380px;
+               text-align: center;
+               background-color: white;
+            }
+            .center {
+                margin-left: auto;
+                margin-right: auto;
+                width: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <div id="message"> 
+                <?php printf("%s", $message);?> 
+                <!--"printf" outputs a formatted string in this case what is in the variable $message-->
+            </div class="center">
+            <form name="gameform" method="post" action="index.php" class="center"> <!--Main Form-->
+               <img src="images/number1.jpg">
+               <input type="number" name="guess" id="guess" value="<?php echo $guess;?>" min="0" max="100" required="true">
+               <img src="images/number2.jpg"><br>
+               <input type="submit" name="submitbtn" id="submitbtn" value="<?php printf("%s", $submitbtn);?>"><!--Button-->
+           </form>
+       </div>
+    </body>
+</html>
