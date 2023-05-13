@@ -1,0 +1,43 @@
+body {
+    background-color: white;
+}
+
+h1 {
+    color: black;
+    font-family: "Arial";
+    font-size: 50px;
+    text-align: center;
+}
+
+h2 {
+    color: black;
+    font-family: "Arial";
+    font-size: 45px;
+    text-align: center;
+}
+
+h3 {
+    color: black;
+    font-family: "Arial";
+    font-size: 30px;
+    text-align: center;
+}
+
+#style1 {
+    color: black;
+    font-family: "Arial";
+    font-size: 30px;
+    text-align: center;
+}
+
+#btn {
+    color: red;
+    font-family: 'Arial';
+    font-size: 100%;
+    font-weight: bold;
+    width: 380px;
+    height: 50px;
+    text-align: center;
+    background-color: white;
+    justify-content: center;
+}
