@@ -1,0 +1,79 @@
+Q1.
+Select Capital, Population
+from States
+Where Population > 1000000
+
+
+Q2.
+Select Capital, Population
+from States
+Where Population < 1000000
+
+
+Q3.
+Select State, Growth
+from States
+Where Growth > 1.5
+Order by State Asc
+
+
+Q4.
+Select State, Population
+from States
+Where Population < 500000
+Order by Population DESC
+
+
+Q5.
+Select year 
+From SportsAwards
+Where Sport = 'Swimming'
+Order by Year DESC
+
+
+Q6.
+Select FirstName, Surname
+From SportsAwards
+where Sport = 'Athletics'
+order by Surname ASC
+
+
+Q7.
+Select *
+From SportsAwards
+where year < 1998
+order by Year DESC
+
+
+Q8.
+Select *
+From SportsAwards
+where year >= 1996
+order by Sport ASC, FirstName ASC
+
+
+Q9.
+Select *
+From PhoneBook
+where Street = 'Sapphire'
+order by StreetNo ASC
+
+
+Q10.
+Select Name, StreetNo
+From PhoneBook
+where StreetNo < 4
+
+
+Q11.
+Select *
+From PhoneBook
+where Phone Between 46810000 AND 46810010 
+order by StreetNo ASC
+
+
+Q12.
+Select *
+From PhoneBook
+where StreetNo = '5' AND Street= 'Diamond'
+

@@ -1,0 +1,58 @@
+Q1.
+Select Avg(Height) AS AverageHeight
+From Mountains
+
+Q2.
+Select Count(*)
+From Mountains
+Where Height > 1500
+
+Q3.
+Select Count(*)
+From Mountains
+Where Height > (SELECT Avg(Height) From Mountains)
+
+Q4.
+Select *
+From Mountains
+Where Height = (SELECT Min(Height) From Mountains)
+
+Q5.
+Select Sum(Deaths), Count(Cause)
+From Disasters
+
+Q6.
+Select Max(Deaths)-Min(Deaths)
+From Disasters
+
+Q7.
+SELECT SUM(Deaths) as 'Deaths by Bushfire & Floods' 
+FROM Disasters 
+WHERE Cause IN ('Bushfire', 'Flood');
+
+Q8.
+SELECT *
+FROM Disasters 
+Where Deaths = (SELECT Max(Deaths) From Disasters)
+
+Q9.
+Select Count(*) as 'Shot'
+From Bushrangers 
+Where HowDied LIKE 'Shot'
+
+Q10.
+Select Count(*) as 'Shot or Hung'
+From Bushrangers 
+Where HowDied LIKE 'Shot' OR HowDied LIKE 'Hanged'
+
+Q11.
+Select AVG(Died-Born) as 'Average Age at Death'
+From Bushrangers
+Where Died-Born > 0
+
+Q12.
+Select Name, Died-Born AS Lifespan
+From Bushrangers
+Where Died-Born > 0
+ORDER BY Lifespan DESC
+Limit 1
