@@ -1,0 +1,82 @@
+Q1.
+Select *
+From ColdPlaces
+Where Temp = (Select Min(Temp) FROM ColdPlaces) AND State = ('Qld')
+
+
+Q2.
+SELECT State, MIN(Temp) AS Min_temp
+FROM ColdPlaces
+GROUP BY State
+
+
+Q3.
+SELECT State, MIN(Temp) AS Min_temp
+FROM ColdPlaces
+WHERE Temp < -10
+GROUP BY State
+
+
+Q4.
+SELECT State, MIN(Temp) AS Min_temp
+FROM ColdPlaces
+WHERE Temp < -12 AND State = 'Qld' OR State = 'NSW' OR State = 'Vic'
+GROUP BY State
+
+
+Q5.
+Select *
+From HotPlaces
+Where State = 'NT'
+Order by Temp Desc
+Limit 1
+
+
+Q6.
+SELECT State, MAX(Temp) AS MaxTemp
+FROM HotPlaces
+GROUP BY State
+
+
+Q7.
+SELECT State, MAX(Temp) AS MaxTemp
+FROM HotPlaces
+Where Temp > 48
+GROUP BY State
+
+
+Q8.
+SELECT state, AVG(Temp) AS Avg_Temp
+FROM HotPlaces
+GROUP BY State
+ORDER BY Avg_Temp DESC
+
+
+Q9
+Select Trainer, Count(Trainer) AS Winning_Horses
+From MelCup
+Group by Trainer
+Order by Trainer Asc
+
+
+Q10.
+Select Jockey
+From MelCup
+Group by Jockey
+Having Count(*) > 1
+
+
+Q11.
+Select Trainer
+From MelCup
+Group by Trainer
+Having Count(*) = 1
+
+
+Q12.
+Select Horse, Year, Weight
+From MelCup
+Where Age = 4
+Order By Weight ASC
+Limit 1
+
