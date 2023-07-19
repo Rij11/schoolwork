@@ -1,0 +1,103 @@
+Q1.
+Select Beds AS Bed_Amt, Count(Beds) AS Rooms_Avl
+From Rooms
+Where View Like 'Ocean'
+Group by Beds
+
+
+Q2.
+Select Guests.FName, Guests.SName, Bookings.RoomNo
+From Guests
+Join Bookings ON Guests.GuestID = Bookings.GuestID
+Where Bookings.Arrival <= '2006-12-03' AND Bookings.Departure >= '2006-12-03'
+
+
+Q3.
+Select g.FName, g.SName, b.RoomNo, SUM(s.Charge) AS TotalServicesCharge
+From Guests g
+Inner Join Bookings b ON g.GuestID = b.GuestID
+Inner Join Services s ON b.BookingID = s.BookingID
+Group by g.FName, g.SName, b.RoomNo
+
+
+Q4.
+Select G.FName, G.SName, B.RoomNo
+From Guests G
+Join Bookings B ON G.GuestID = B.GuestID
+Join Rooms R ON B.RoomNo = R.RoomNo
+Where G.VIP = 1 AND R.Rate < (Select AVG(Rate) From Rooms)
+
+
+Q5.
+Select R.RoomNo, R.Rate, COUNT(*) AS NumStays
+From Guests G
+Join Bookings B ON G.GuestID = B.GuestID
+Join Rooms R ON B.RoomNo = R.RoomNo
+Where G.FName = 'Lin' AND G.SName = 'Wong'
+Group By R.RoomNo, R.Rate
+
+
+Q6.
+Select B.RoomNo, COUNT(*) AS NumBookings
+From Bookings B
+Join Rooms R ON B.RoomNo = R.RoomNo
+Where R.View IN ('Ocean', 'City')
+Group by B.RoomNo
+Having COUNT(*) > 1
+
+
+Q7.
+Select sp.Name, AVG(s.Price) AS Avg_Sale_Price
+From Salespeople sp
+Join Sales s ON sp.Name = s.Salesperson
+Group By sp.Name
+
+
+Q8.
+Select DISTINCT Customer
+From Sales
+Where Car IN (Select Car From Cars Where Make = 'Toyota')
+Order By Customer Asc 
+
+
+Select DISTINCT Customer
+From Cars c
+Join Sales s ON c.Car = s.Car
+Where c.Make = 'Toyota'
+Order By Customer Asc
+
+
+Q9.
+Select sp.Name
+From Salespeople sp
+Left Join Sales s ON sp.Name = s.Salesperson
+Group By sp.Name
+Having COUNT(s.Order) < 2
+
+
+Q10.
+Select e.Fuel
+From Cars c
+Join Sales s ON c.Car = s.Car
+Join Engines e ON c.Engine = e.Engine
+Where s.Price = (Select MIN(Price) From Sales)
+
+
+Q11.
+(Note: Assuming the commission is formatted as "1.9%" )
+
+Select Salesperson, (sa.Price * (s.Commission / 100)) AS Commission
+From Salespeople s
+Join Sales sa ON s.Name = sa.Salesperson
+Join Cars c ON sa.Car = c.Car
+Where sa.Price = (Select MIN(Price) From Sales)
+
+
+Q12.
+Select s.Name AS Salesperson, COUNT(*) AS "# Cars Sold 100-200kw & < $15,000"
+From Salespeople s
+Join Sales sa ON s.Name = sa.Salesperson
+Join Cars c ON sa.Car = c.Car
+Join Engines e ON c.Engine = e.Engine
+Where e.Power BETWEEN 100 And 200 And sa.Price < 15000
+Group By s.Name
