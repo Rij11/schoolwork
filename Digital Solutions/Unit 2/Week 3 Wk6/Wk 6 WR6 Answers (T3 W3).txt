@@ -1,0 +1,26 @@
+Q1.
+Uniqueness in tables refers to if any of the values within that column will ever be the same. 
+Options such as gender are either M or F & therefore not unique as lots of entries will have the same value.
+Other options such as Birthdays might seem unique, but with large enough tables there will eventually be 2 people with the same DOB.
+Options such as User Id's, phone numbers, and emails are unique becuase each value can only appear/be used/created once.
+
+
+Q2.
+Primary keys and foreign keys are both the same data.
+Primary keys are always unique, with each row containing a different value, while in other tables, the corresponding foreign key can be referenced/used multiple times.
+EG: User 1 will appear once in the User database, but User 1 could appear multiple times in the Purchases database.
+
+
+Q3.
+Primary keys are the original unique data appearing in the first/ (It's) main database, foreign keys are used to link/reference that data to multiple other databases.
+This prevents unnecessary duplication of data/information.
+
+
+Q4.
+Relational databases are useful as they prevent the unnecessary duplication of data & information, and allow for easy connection. They also allow for the 'fair' distribution of data;
+EG: You can give certain employees/people access to a table that contains relevant information, but can exclude personal data such as passwords, addresses, etc.
+
+
+Q5.
+Screenshot
+
