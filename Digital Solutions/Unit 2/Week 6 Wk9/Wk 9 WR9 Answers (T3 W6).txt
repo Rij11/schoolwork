@@ -1,0 +1,16 @@
+Q1.
+https://cairnssde.ipto.com.au/2023%20Yr11%20-%20Glen/rhamp14/Unit%202/WR9/form_get_sam.php
+
+
+Q2.
+    <h1>Register an owner </h1>
+Fill in the details below to register an owner:<br><br>
+<form name="insert" method="post" action="addowner.php">
+    First Name: <input name="firstName" type="text"> <br/><br/>
+    Surname: <input name="surname" type="text"> <br/><br/>
+    Email: <input name="email" type="text"> <br/><br/>
+    Street: <input name="street" type="text"> <br/><br/>
+    Suburb: <input name="suburb" type="text"> <br/><br/>
+    Postcode: <input name="postcode" type="text"> <br/><br/>
+    <input name="insert" type="submit" value="Submit"><br/><br/>
+</form>
