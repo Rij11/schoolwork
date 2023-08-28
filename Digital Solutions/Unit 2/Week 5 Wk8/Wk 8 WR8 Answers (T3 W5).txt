@@ -1,0 +1,46 @@
+Q1.
+(DFD / Draw.io)
+
+Q2.
+(Table / Word Doc)
+
+
+Q3.
+Select petID, date, time
+From bookingDetails
+Where petID = 4
+
+
+Q4.
+Select petID, date, time, vetID
+From bookingDetails
+Where petID = 4 AND date like '2020-07-23'
+
+
+Q5.
+Select count(petID)
+From bookingDetails
+Where vetID = 1
+
+
+Q6.
+Select bd.petID, bd.date, bd.time, vd.firstName, vd.surname
+From bookingDetails bd
+Join vetDetails vd ON bd.vetID = vd.vetID
+Order by vd.surname
+
+
+Q7.
+Select bd.petID, p.petName, bd.date, bd.time
+From bookingDetails bd
+Join petDetails p ON bd.petID = p.petID
+Where bd.petID = 4
+
+
+Q8.
+Select p.petName, p.typeOfPet, p.DOB, bd.date, bd.time, vd.surname
+From bookingDetails bd
+Join petDetails p ON bd.petID = p.petID
+Join vetDetails vd ON bd.vetID = vd.vetID
+Where vd.vetID = 3
+
