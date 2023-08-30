@@ -1,0 +1,49 @@
+<?php
+include 'header.php';
+include 'nav.php';
+require 'connect.php';
+?>
+
+<article>
+    <h1>Search Pets for future Bookings</h1>
+    <form name="search" method="post" action="searchpetbookings.php">   <!--= Form -->
+        Pet Name: <input name="petName" type="text"> <br/><br/>
+        <input name="submit" type="submit" value="Submit"><br/><br/>
+    </form><br><br>
+</article>
+</section>
+
+<?php
+     if (isset($_POST['submit'])) {
+        $petName=$_POST['petName']; //Assign Varaibles
+
+        //SQL Query
+        $sql = "SELECT p.petID, p.petName, b.date, b.time, v.firstName, v.surname
+                FROM petDetails p
+                JOIN bookingDetails b ON p.petID = b.petID
+                JOIN vetDetails v ON b.vetID = v.vetID
+                WHERE b.date > CURRENT_DATE() AND p.petName = '$petName'";
+        
+        $result = mysqli_query($conn, $sql);
+        
+        //Display table
+        echo "<table border='1'>";
+        echo "<tr><th>Pet ID</th><th>Pet Name</th><th>Date</th><th>Time</th><th>Vet First Name</th><th>Vet Surname</th></tr>";   //Table titles
+        while($row = mysqli_fetch_assoc($result)){
+        echo "<tr>
+                <td>{$row['petID']}</td>
+                <td>{$row['petName']}</td>
+                <td>{$row['date']}</td>
+                <td>{$row['time']}</td>
+                <td>{$row['firstName']}</td>
+                <td>{$row['surname']}</td>
+            </tr>";
+         }
+        echo "</table>";
+     }
+?>
+<?php
+include 'footer.php';
+?>
+</body>
+</html>
