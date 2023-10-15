@@ -1,0 +1,96 @@
+TABLES
+
+
+CREATE TABLE Levels (
+    lvlID int(1) AUTO_INCREMENT,
+    lvlName varchar(25) NOT NULL,
+    
+	PRIMARY KEY (lvlID)
+)
+
+
+CREATE TABLE Users (
+    userID int(5) AUTO_INCREMENT,
+    fName varchar(35) NOT NULL,
+    sName varchar(35) NOT NULL,
+    email varchar(50) NOT NULL,
+    tel int(10),
+    grade int(2) NOT NULL,
+    password varchar(35) NOT NULL,
+    lvlID int(1) NOT NULL,
+    
+    PRIMARY KEY (userID),
+    FOREIGN KEY(lvlID) REFERENCES Levels(lvlID)
+)
+
+
+CREATE TABLE Subjects(
+    subjectID int(2) AUTO_INCREMENT,
+    subjectName varchar(25) NOT NULL,
+
+    PRIMARY KEY (subjectID)
+)
+
+
+CREATE TABLE Sessions(
+    sessionID int(5) AUTO_INCREMENT,
+    menteeID int(5),
+    mentorID int(5) NOT NULL,
+    year int(4) NOT NULL,
+    term int(1) NOT NULL,
+    week int(2) NOT NULL,
+    subjectID int(2),
+    booked varchar(1) NOT NULL,
+
+    PRIMARY KEY (sessionID),
+    FOREIGN KEY(menteeID) REFERENCES Users(userID),
+    FOREIGN KEY(mentorID) REFERENCES Users(userID),
+    FOREIGN KEY(subjectID) REFERENCES Subjects(subjectID)
+)
+
+
+CREATE TABLE MentorSubjects(
+    userID int(5) NOT NULL,
+    subjectID int(2) NOT NULL,
+    
+    PRIMARY KEY (userID, subjectID),
+    FOREIGN KEY(userID) REFERENCES Users(userID),
+    FOREIGN KEY(subjectID) REFERENCES Subjects(subjectID)
+)
+
+CREATE TABLE Feedback(
+    feedbackID int(5) AUTO_INCREMENT,
+    mentorID int(5) NOT NULL,
+    menteeID int(5) NOT NULL,
+    feedback varchar(2000) NOT NULL,
+    
+    PRIMARY KEY (feedbackID),
+    FOREIGN KEY(mentorID) REFERENCES Sessions(mentorID),
+    FOREIGN KEY(menteeID) REFERENCES Sessions(menteeID)
+)
+
+
+
+INSERT INTO Users(fName, sName, email, grade, password, lvlID)
+VALUES ('Riley', 'Hampson', 'rhamp14@eq.edu.au', 11, 'pass', 1);
+INSERT INTO Users(fName, sName, email, grade, password, lvlID)
+VALUES ('Kaden', 'Cameron', kcame84@eq.edu.au', 11, 'pass', 2);
+INSERT INTO Users(fName, sName, email, grade, password, lvlID)
+VALUES ('Glen', 'Nixon', gniox4@eq.edu.au', 0, 'pass', 3);
+
+INSERT INTO Subjects(subjectName)
+VALUES ('Digital Solutions');
+INSERT INTO Subjects(subjectName)
+VALUES ('Accounting');
+INSERT INTO Subjects(subjectName)
+VALUES ('Maths');
+
+INSERT INTO Levels(lvlName)
+VALUES ('Mentee');
+INSERT INTO Levels(lvlName)
+VALUES ('Mentor');
+INSERT INTO Levels(lvlName)
+VALUES ('Supervisor');
+
+
+
