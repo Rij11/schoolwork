@@ -1,0 +1,41 @@
+Q1.
+Mind Map (Draw.io / PNG)
+
+Q2.
+Table (MS Word / PNG)
+
+Q3.
+Textual Analysis:
+The personas provided allow for a directed design when constructing a Shark Warning Application.
+It can bee seen that the Age of the Users that will be utlising the application are varied. 
+Becuase of this, the website will have to be built with UI & UX in consideration for any elderly users.
+The site will also have to be functional across different devices used by each age group.
+
+All of the users have a hobby involving the water (Generally around the coast).
+Because of this, it would be best for them to be able to save there regular locations.
+But, the site should also be easily accessable to vistors and tourists to avoid unfortunate accidents.
+
+Q4. 
+Criteria:
+
+By the due date of the task all of the following criteria must be met:
+
+Prescribed:
+-Admins must be able to upload Shark data into the system Database.
+-Users must be able to register and select all the beaches relating to them to receive warnings.
+-Follow the Australian Government accessability standards and comply with the Privacy Act 1988.
+
+Self Determined:
+-Use a mySQL database for storing the shark data.
+-All Code must follow coding conventions to assist other programmers (White Space, Indentations, Comments)
+-Develop an effeicent algorithm to send alerts as timely as possible.
+
+
+Q5.
+To comply with the Privacy Act 1988, all personal data must be stored hashed.
+All user passwords should meet a strong minium standard to prevent hacking.
+To ensure the safety, availability, & data integrity, regular server backups should be completed and saved offsite incase the main server crashes.
+Proper ULA should be implemented to prevent normal users from accessing pages they shouldn't have access to, especially relating to shark alerts.
+Admins should have to complete an extra authentication step before uploading shark data and especially before sending out alerts.
+
+
